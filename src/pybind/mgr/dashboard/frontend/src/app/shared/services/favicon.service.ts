@@ -35,7 +35,7 @@ export class FaviconService implements OnDestroy {
     this.oldStatus = status;
 
     const favicon = this.document.getElementById('cdFavicon');
-    const faviconSize = 16;
+    const faviconSize = 20;
     const radius = faviconSize / 4;
 
     const canvas = this.document.createElement('canvas');

@@ -6,12 +6,13 @@ $dark-secondary: darken(vv.$secondary, 4%);
 ::ng-deep cd-login {
   .form-group {
     background-color: $dark-secondary;
-    border-left: 4px solid vv.$white;
+    // border-left: 4px solid vv.$white;
     height: auto;
     margin-bottom: 2rem;
 
     &:focus-within {
-      border-left: 4px solid map.get(vv.$theme-colors, 'accent');
+      border-left: 4px solid vv.$white;
+      // border-left: 4px solid map.get(vv.$theme-colors, 'accent');
     }
   }
 

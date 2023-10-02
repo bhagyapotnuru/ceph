@@ -17,8 +17,15 @@
 
 ::ng-deep cd-navigation .cd-navbar-top {
   .cd-navbar-brand {
-    background: vv.$secondary;
-    border-top: 4px solid vv.$primary;
+    background-color: #3b4c64 !important;
+    &.is-dark {
+      background-color: #3b4c64 !important;
+      background: linear-gradient(
+        0deg,
+        rgb(29 89 126) 0%,
+        rgba(59, 76, 100, 1) 100%
+      ) !important;
+    }
 
     .navbar-brand,
     .navbar-brand:hover {
@@ -28,7 +35,7 @@
     }
 
     .navbar-brand > img {
-      height: 25px;
+      height: 50px;
     }
 
     .navbar-toggler {
@@ -83,7 +90,8 @@
   .navbar-nav > li > .cd-navbar > a:hover,
   .navbar-nav > li > a:hover,
   .navbar-nav > li:hover {
-    background-color: vv.$primary;
+    background-color:  rgba(255,255,255,.1)!important;
+      color: vv.$white;
   }
 
   .navbar-nav > .open > .cd-navbar > [ngbDropdown] > a,
@@ -106,7 +114,7 @@
       font-size: 1.1rem;
       position: absolute;
       right: 0;
-      top: 0;
+      top: 10;
     }
   }
 
@@ -150,7 +158,7 @@ $sidebar-width: 200px;
 .cd-navbar-primary .active > a,
 .cd-navbar-primary > .active > a:focus,
 .cd-navbar-primary > .active > a:hover {
-  background-color: vv.$primary !important;
+  background-color: rgba(255,255,255,.1) !important;
   border: 0 !important;
   color: vv.$white !important;
 }
@@ -161,7 +169,15 @@ $sidebar-width: 200px;
   width: 100%;
 
   #sidebar {
-    background: vv.$secondary;
+    background-color: #3b4c64 !important;
+    &.is-dark {
+      background-color: #3b4c64 !important;
+      background: linear-gradient(
+        0deg,
+        rgb(29 89 126) 0%,
+        rgba(59, 76, 100, 1) 100%
+      ) !important;
+    }
     bottom: 0;
     color: vv.$white;
     height: auto;
@@ -197,7 +213,7 @@ $sidebar-width: 200px;
         text-decoration: none;
 
         &:hover {
-          background: vv.$primary;
+          background: rgba(255,255,255,.1);
           color: vv.$white;
         }
 
@@ -233,7 +249,7 @@ $sidebar-width: 200px;
   }
 
   ul ul a {
-    background: lighten(vv.$secondary, 10);
+    background: #3b4c64;
     font-size: 1.1em !important;
     padding-left: 40px !important;
   }

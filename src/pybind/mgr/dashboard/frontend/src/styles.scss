@@ -52,6 +52,31 @@ $grid-breakpoints: (
 .col-form-label {
   font-weight: 700;
 }
+.btn-outline-info,.btn-outline-info:hover{
+  background-color: #e73594!important;
+  color: white!important;
+  border: #e73594!important;
+  
+}
+.btn-link,.btn-link:hover{
+  color: white!important;
+}
+.btn-accent, .btn-primary,.btn-accent:hover,.btn-primary:hover,.show > .btn-accent.dropdown-toggle {
+  background-color: #e73594!important;
+  color: white!important;
+  border: #e73594!important;
+  box-shadow: none!important;
+}
+
+.btn-light,.btn-light:hover,.btn-light:active{
+  color:white !important;
+  background-color: #e73594 !important;
+}
+.btn-outline-light:hover{
+  color:white!important;
+  background-color: #2e373d!important;
+}
+
 
 //Displaying the password strength
 .password-strength-level {

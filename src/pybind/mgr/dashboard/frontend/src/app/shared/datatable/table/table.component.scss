@@ -192,7 +192,7 @@
 
     .datatable-body-row {
       &.clickable:hover .datatable-row-group {
-        background-color: lighten(vv.$primary, 45%);
+        background-color: #e7f1ee;
         transition-duration: 0.3s;
         transition-property: background;
         transition-timing-function: linear;
@@ -208,7 +208,7 @@
 
       &.active,
       &.active:hover {
-        background-color: lighten(vv.$primary, 35%);
+        background-color: #e7f1ee;
       }
 
       .datatable-body-cell {
