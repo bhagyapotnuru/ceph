@@ -17,14 +17,17 @@
 
 ::ng-deep cd-navigation .cd-navbar-top {
   .cd-navbar-brand {
-    background-color: #3b4c64 !important;
-    &.is-dark {
-      background-color: #3b4c64 !important;
-      background: linear-gradient(
+    background: linear-gradient(
         0deg,
         rgb(29 89 126) 0%,
         rgba(59, 76, 100, 1) 100%
       ) !important;
+    &.is-dark {
+      background: linear-gradient(
+        0deg,
+        rgb(29 89 126) 0%,
+        rgba(59, 76, 100, 1) 100%
+      ) !important;     
     }
 
     .navbar-brand,
@@ -169,13 +172,16 @@ $sidebar-width: 200px;
   width: 100%;
 
   #sidebar {
-    background-color: #3b4c64 !important;
+    background: linear-gradient(
+      0deg,
+      rgba(59, 76, 100, 1) 0%,
+      rgb(29 89 126) 100%
+    ) !important;
     &.is-dark {
-      background-color: #3b4c64 !important;
       background: linear-gradient(
         0deg,
-        rgb(29 89 126) 0%,
-        rgba(59, 76, 100, 1) 100%
+        rgba(59, 76, 100, 1) 0%,
+        rgb(29 89 126) 100%
       ) !important;
     }
     bottom: 0;
@@ -249,7 +255,6 @@ $sidebar-width: 200px;
   }
 
   ul ul a {
-    background: #3b4c64;
     font-size: 1.1em !important;
     padding-left: 40px !important;
   }

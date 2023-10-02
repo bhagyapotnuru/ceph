@@ -1,10 +1,9 @@
 @use './src/styles/vendor/variables' as vv;
 
 ::ng-deep cd-login-layout .login {
-  background-color: vv.$secondary;
-  background-image: url('../../../../assets/ceph_background.gif');
-  background-position: right bottom;
-  background-repeat: no-repeat;
+  background: linear-gradient(0deg,
+      rgb(29 89 126) 0%,
+      rgba(59, 76, 100, 1) 100%) !important;
   color: vv.$body-color-bright;
 
   header {
