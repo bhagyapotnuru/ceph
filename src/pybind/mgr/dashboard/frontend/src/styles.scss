@@ -77,6 +77,29 @@ $grid-breakpoints: (
   background-color: #2e373d!important;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #8bb9ab;
+  border-radius: 1px;
+  border-bottom: 1px solid #b0bbb8;
+  border-top: 1px solid #b0bbb8;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #30516e;
+}
+
 
 //Displaying the password strength
 .password-strength-level {
