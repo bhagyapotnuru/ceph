@@ -84,6 +84,10 @@ export class NavigationComponent implements OnInit, OnDestroy {
     this.subs.unsubscribe();
   }
 
+  getUtcDate() {
+    return new Date().toUTCString()
+  }
+
   blockHealthColor() {
     if (this.summaryData && this.summaryData.rbd_mirroring) {
       if (this.summaryData.rbd_mirroring.errors > 0) {
