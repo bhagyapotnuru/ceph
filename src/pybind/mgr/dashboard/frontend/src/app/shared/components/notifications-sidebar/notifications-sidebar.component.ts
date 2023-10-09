@@ -30,7 +30,7 @@ import { PrometheusAlertService } from '~/app/shared/services/prometheus-alert.s
 import { PrometheusNotificationService } from '~/app/shared/services/prometheus-notification.service';
 import { SummaryService } from '~/app/shared/services/summary.service';
 import { TaskMessageService } from '~/app/shared/services/task-message.service';
-
+import { RefreshIntervalService } from '~/app/shared/services/refresh-interval.service';
 @Component({
   selector: 'cd-notifications-sidebar',
   templateUrl: './notifications-sidebar.component.html',
@@ -41,12 +41,12 @@ export class NotificationsSidebarComponent implements OnInit, OnDestroy {
   @HostBinding('class.active') isSidebarOpened = false;
 
   notifications: CdNotification[];
-  private interval: number;
   private timeout: number;
 
   executingTasks: ExecutingTask[] = [];
 
   private subs = new Subscription();
+  private interval = new Subscription();
 
   icons = Icons;
 
@@ -68,15 +68,16 @@ export class NotificationsSidebarComponent implements OnInit, OnDestroy {
     private prometheusAlertService: PrometheusAlertService,
     private prometheusService: PrometheusService,
     private ngZone: NgZone,
-    private cdRef: ChangeDetectorRef
+    private cdRef: ChangeDetectorRef,
+    private refreshIntervalService: RefreshIntervalService,
   ) {
     this.notifications = [];
   }
 
   ngOnDestroy() {
-    window.clearInterval(this.interval);
     window.clearTimeout(this.timeout);
     this.subs.unsubscribe();
+    this.interval.unsubscribe();
   }
 
   ngOnInit() {
@@ -86,11 +87,11 @@ export class NotificationsSidebarComponent implements OnInit, OnDestroy {
     if (permissions.prometheus.read && permissions.configOpt.read) {
       this.triggerPrometheusAlerts();
       this.ngZone.runOutsideAngular(() => {
-        this.interval = window.setInterval(() => {
+        this.interval = this.refreshIntervalService.intervalData$.subscribe(() => {
           this.ngZone.run(() => {
             this.triggerPrometheusAlerts();
           });
-        }, 5000);
+        });
       });
     }
 
